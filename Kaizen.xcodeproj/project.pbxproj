@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D0ABC102859720C00ABACAD /* KaizenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC0F2859720C00ABACAD /* KaizenApp.swift */; };
+		8D0ABC122859720C00ABACAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC112859720C00ABACAD /* ContentView.swift */; };
+		8D0ABC142859720D00ABACAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC132859720D00ABACAD /* Assets.xcassets */; };
+		8D0ABC182859720D00ABACAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC172859720D00ABACAD /* Preview Assets.xcassets */; };
+		8D0ABC222859720D00ABACAD /* KaizenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC212859720D00ABACAD /* KaizenTests.swift */; };
+		8D0ABC2C2859720D00ABACAD /* KaizenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC2B2859720D00ABACAD /* KaizenUITests.swift */; };
+		8D0ABC2E2859720D00ABACAD /* KaizenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC2D2859720D00ABACAD /* KaizenUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8D0ABC1E2859720D00ABACAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D0ABC042859720C00ABACAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D0ABC0B2859720C00ABACAD;
+			remoteInfo = Kaizen;
+		};
+		8D0ABC282859720D00ABACAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D0ABC042859720C00ABACAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D0ABC0B2859720C00ABACAD;
+			remoteInfo = Kaizen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8D0ABC0C2859720C00ABACAD /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ABC0F2859720C00ABACAD /* KaizenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenApp.swift; sourceTree = "<group>"; };
+		8D0ABC112859720C00ABACAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8D0ABC132859720D00ABACAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D0ABC152859720D00ABACAD /* Kaizen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kaizen.entitlements; sourceTree = "<group>"; };
+		8D0ABC172859720D00ABACAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8D0ABC1D2859720D00ABACAD /* KaizenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaizenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ABC212859720D00ABACAD /* KaizenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenTests.swift; sourceTree = "<group>"; };
+		8D0ABC272859720D00ABACAD /* KaizenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaizenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ABC2B2859720D00ABACAD /* KaizenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenUITests.swift; sourceTree = "<group>"; };
+		8D0ABC2D2859720D00ABACAD /* KaizenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D0ABC092859720C00ABACAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0ABC1A2859720D00ABACAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0ABC242859720D00ABACAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D0ABC032859720C00ABACAD = {
+			isa = PBXGroup;
+			children = (
+				8D0ABC0E2859720C00ABACAD /* Kaizen */,
+				8D0ABC202859720D00ABACAD /* KaizenTests */,
+				8D0ABC2A2859720D00ABACAD /* KaizenUITests */,
+				8D0ABC0D2859720C00ABACAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8D0ABC0D2859720C00ABACAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABC0C2859720C00ABACAD /* Kaizen.app */,
+				8D0ABC1D2859720D00ABACAD /* KaizenTests.xctest */,
+				8D0ABC272859720D00ABACAD /* KaizenUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D0ABC0E2859720C00ABACAD /* Kaizen */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABC0F2859720C00ABACAD /* KaizenApp.swift */,
+				8D0ABC112859720C00ABACAD /* ContentView.swift */,
+				8D0ABC132859720D00ABACAD /* Assets.xcassets */,
+				8D0ABC152859720D00ABACAD /* Kaizen.entitlements */,
+				8D0ABC162859720D00ABACAD /* Preview Content */,
+			);
+			path = Kaizen;
+			sourceTree = "<group>";
+		};
+		8D0ABC162859720D00ABACAD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABC172859720D00ABACAD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D0ABC202859720D00ABACAD /* KaizenTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABC212859720D00ABACAD /* KaizenTests.swift */,
+			);
+			path = KaizenTests;
+			sourceTree = "<group>";
+		};
+		8D0ABC2A2859720D00ABACAD /* KaizenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABC2B2859720D00ABACAD /* KaizenUITests.swift */,
+				8D0ABC2D2859720D00ABACAD /* KaizenUITestsLaunchTests.swift */,
+			);
+			path = KaizenUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D0ABC0B2859720C00ABACAD /* Kaizen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D0ABC312859720D00ABACAD /* Build configuration list for PBXNativeTarget "Kaizen" */;
+			buildPhases = (
+				8D0ABC082859720C00ABACAD /* Sources */,
+				8D0ABC092859720C00ABACAD /* Frameworks */,
+				8D0ABC0A2859720C00ABACAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kaizen;
+			productName = Kaizen;
+			productReference = 8D0ABC0C2859720C00ABACAD /* Kaizen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D0ABC1C2859720D00ABACAD /* KaizenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D0ABC342859720D00ABACAD /* Build configuration list for PBXNativeTarget "KaizenTests" */;
+			buildPhases = (
+				8D0ABC192859720D00ABACAD /* Sources */,
+				8D0ABC1A2859720D00ABACAD /* Frameworks */,
+				8D0ABC1B2859720D00ABACAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D0ABC1F2859720D00ABACAD /* PBXTargetDependency */,
+			);
+			name = KaizenTests;
+			productName = KaizenTests;
+			productReference = 8D0ABC1D2859720D00ABACAD /* KaizenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8D0ABC262859720D00ABACAD /* KaizenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D0ABC372859720D00ABACAD /* Build configuration list for PBXNativeTarget "KaizenUITests" */;
+			buildPhases = (
+				8D0ABC232859720D00ABACAD /* Sources */,
+				8D0ABC242859720D00ABACAD /* Frameworks */,
+				8D0ABC252859720D00ABACAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D0ABC292859720D00ABACAD /* PBXTargetDependency */,
+			);
+			name = KaizenUITests;
+			productName = KaizenUITests;
+			productReference = 8D0ABC272859720D00ABACAD /* KaizenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8D0ABC042859720C00ABACAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					8D0ABC0B2859720C00ABACAD = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					8D0ABC1C2859720D00ABACAD = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 8D0ABC0B2859720C00ABACAD;
+					};
+					8D0ABC262859720D00ABACAD = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 8D0ABC0B2859720C00ABACAD;
+					};
+				};
+			};
+			buildConfigurationList = 8D0ABC072859720C00ABACAD /* Build configuration list for PBXProject "Kaizen" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D0ABC032859720C00ABACAD;
+			productRefGroup = 8D0ABC0D2859720C00ABACAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D0ABC0B2859720C00ABACAD /* Kaizen */,
+				8D0ABC1C2859720D00ABACAD /* KaizenTests */,
+				8D0ABC262859720D00ABACAD /* KaizenUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D0ABC0A2859720C00ABACAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0ABC182859720D00ABACAD /* Preview Assets.xcassets in Resources */,
+				8D0ABC142859720D00ABACAD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0ABC1B2859720D00ABACAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0ABC252859720D00ABACAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D0ABC082859720C00ABACAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0ABC122859720C00ABACAD /* ContentView.swift in Sources */,
+				8D0ABC102859720C00ABACAD /* KaizenApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0ABC192859720D00ABACAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0ABC222859720D00ABACAD /* KaizenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0ABC232859720D00ABACAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0ABC2E2859720D00ABACAD /* KaizenUITestsLaunchTests.swift in Sources */,
+				8D0ABC2C2859720D00ABACAD /* KaizenUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D0ABC1F2859720D00ABACAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D0ABC0B2859720C00ABACAD /* Kaizen */;
+			targetProxy = 8D0ABC1E2859720D00ABACAD /* PBXContainerItemProxy */;
+		};
+		8D0ABC292859720D00ABACAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D0ABC0B2859720C00ABACAD /* Kaizen */;
+			targetProxy = 8D0ABC282859720D00ABACAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8D0ABC2F2859720D00ABACAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8D0ABC302859720D00ABACAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8D0ABC322859720D00ABACAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Kaizen/Kaizen.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kaizen/Preview Content\"";
+				DEVELOPMENT_TEAM = T3HGNYB58C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pineappleSolutions.Kaizen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8D0ABC332859720D00ABACAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Kaizen/Kaizen.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kaizen/Preview Content\"";
+				DEVELOPMENT_TEAM = T3HGNYB58C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pineappleSolutions.Kaizen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8D0ABC352859720D00ABACAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T3HGNYB58C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pineappleSolutions.KaizenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kaizen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kaizen";
+			};
+			name = Debug;
+		};
+		8D0ABC362859720D00ABACAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T3HGNYB58C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pineappleSolutions.KaizenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kaizen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kaizen";
+			};
+			name = Release;
+		};
+		8D0ABC382859720D00ABACAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T3HGNYB58C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pineappleSolutions.KaizenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kaizen;
+			};
+			name = Debug;
+		};
+		8D0ABC392859720D00ABACAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T3HGNYB58C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pineappleSolutions.KaizenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kaizen;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8D0ABC072859720C00ABACAD /* Build configuration list for PBXProject "Kaizen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D0ABC2F2859720D00ABACAD /* Debug */,
+				8D0ABC302859720D00ABACAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D0ABC312859720D00ABACAD /* Build configuration list for PBXNativeTarget "Kaizen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D0ABC322859720D00ABACAD /* Debug */,
+				8D0ABC332859720D00ABACAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D0ABC342859720D00ABACAD /* Build configuration list for PBXNativeTarget "KaizenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D0ABC352859720D00ABACAD /* Debug */,
+				8D0ABC362859720D00ABACAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D0ABC372859720D00ABACAD /* Build configuration list for PBXNativeTarget "KaizenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D0ABC382859720D00ABACAD /* Debug */,
+				8D0ABC392859720D00ABACAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8D0ABC042859720C00ABACAD /* Project object */;
+}
