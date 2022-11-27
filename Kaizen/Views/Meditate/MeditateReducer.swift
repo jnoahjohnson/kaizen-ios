@@ -9,6 +9,7 @@
 import ComposableArchitecture
 import Foundation
 import SwiftUI
+import PhotosUI
 
 func fileURL() throws -> URL {
     try FileManager.default.url(
@@ -19,6 +20,12 @@ func fileURL() throws -> URL {
     )
     .appendingPathComponent("meditations.data")
 }
+
+
+enum UpdateImageError: Error {
+    case loadTransferableError
+}
+
 
 struct Meditation: Codable, Identifiable, Hashable {
     var id = UUID()
@@ -52,7 +59,8 @@ struct Meditate: ReducerProtocol {
         var addMeditationNavStack: [AddMeditationPages] = []
         var showAddMeditation: Bool = false
         
-        var newMeditation: Meditation?
+        var newMeditation: Meditation? = nil
+        var selectedImageData: Data? = nil
     }
     
     enum Action: Equatable {
@@ -62,9 +70,11 @@ struct Meditate: ReducerProtocol {
         case loadMeditationResult(TaskResult<[Meditation]>)
         case meditationNavStackChanged([AddMeditationPages])
         case navigateAddMeditation(AddMeditationPages)
-        case saveNewMeditationButtonTapped(Meditation, Data)
+        case saveNewMeditationButtonTapped(Meditation)
         case updateShowAddMeditation(Bool)
         case saveImageResponse(TaskResult<String>)
+        case updateImageData(PhotosPickerItem?)
+        case updateImageResponse(TaskResult<Data>)
     }
     
     
@@ -132,7 +142,9 @@ struct Meditate: ReducerProtocol {
             return .none
             
             
-        case let .saveNewMeditationButtonTapped(meditation, imageData):
+        case let .saveNewMeditationButtonTapped(meditation):
+            guard let imageData = state.selectedImageData else { return .none }
+            
             state.newMeditation = meditation
             
             return .task {
@@ -181,6 +193,35 @@ struct Meditate: ReducerProtocol {
             print("Problem saving")
             
             return .none
+            
+        case let .updateImageData(selectedPhoto):
+            guard let selectedPhoto else { return .none }
+            
+            
+            return .task {
+                await .updateImageResponse(
+                    TaskResult {
+                        if let data = try? await selectedPhoto.loadTransferable(type: Data.self) {
+                            return data
+                        }
+                        
+                        throw UpdateImageError.loadTransferableError
+                    }
+                )
+            }
+            
+        case let .updateImageResponse(.success(data)):
+            withAnimation {
+                state.selectedImageData = data
+            }
+            
+            return .none
+            
+        case .updateImageResponse(.failure):
+            print("Issue with update image response")
+            
+            return .none
+           
         }
     }
 }

@@ -32,6 +32,7 @@
 		8D50DD3228CE941C0052218E /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D50DD3128CE941C0052218E /* Bundle-Decodable.swift */; };
 		8D50DD3528CE94E40052218E /* MeditationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D50DD3428CE94E40052218E /* MeditationStore.swift */; };
 		8D9A822128E7D1BE00171280 /* LoadedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A822028E7D1BE00171280 /* LoadedImage.swift */; };
+		8DA3112C29332C07003754E4 /* MeditationStepList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA3112B29332C07003754E4 /* MeditationStepList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		8D50DD3128CE941C0052218E /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		8D50DD3428CE94E40052218E /* MeditationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationStore.swift; sourceTree = "<group>"; };
 		8D9A822028E7D1BE00171280 /* LoadedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedImage.swift; sourceTree = "<group>"; };
+		8DA3112B29332C07003754E4 /* MeditationStepList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationStepList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +185,7 @@
 		8D0ABC43285976F200ABACAD /* Meditate */ = {
 			isa = PBXGroup;
 			children = (
-				8D09557E28DA171100E89220 /* AddMeditation.swift */,
+				8DA3112A29332BF1003754E4 /* AddMeditation */,
 				8D0ABC482859881600ABACAD /* ViewModels */,
 				8D0ABC3F2859737D00ABACAD /* MeditateView.swift */,
 				8D0ABC44285976FF00ABACAD /* MeditateCard.swift */,
@@ -219,6 +221,15 @@
 				8D50DD3428CE94E40052218E /* MeditationStore.swift */,
 			);
 			path = Stores;
+			sourceTree = "<group>";
+		};
+		8DA3112A29332BF1003754E4 /* AddMeditation */ = {
+			isa = PBXGroup;
+			children = (
+				8D09557E28DA171100E89220 /* AddMeditation.swift */,
+				8DA3112B29332C07003754E4 /* MeditationStepList.swift */,
+			);
+			path = AddMeditation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +373,7 @@
 				8D0ABC4728597B5F00ABACAD /* MeditationDetailPage.swift in Sources */,
 				8D0ABC51285989A200ABACAD /* MeditationViewModel.swift in Sources */,
 				8D0ABC422859741700ABACAD /* Journal.swift in Sources */,
+				8DA3112C29332C07003754E4 /* MeditationStepList.swift in Sources */,
 				8D199EA5285DF7180041F159 /* FinishMeditation.swift in Sources */,
 				8D09557F28DA171100E89220 /* AddMeditation.swift in Sources */,
 				8D50DD3228CE941C0052218E /* Bundle-Decodable.swift in Sources */,
