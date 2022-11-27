@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D09557F28DA171100E89220 /* AddMeditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09557E28DA171100E89220 /* AddMeditation.swift */; };
 		8D0ABC102859720C00ABACAD /* KaizenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC0F2859720C00ABACAD /* KaizenApp.swift */; };
 		8D0ABC122859720C00ABACAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC112859720C00ABACAD /* ContentView.swift */; };
 		8D0ABC142859720D00ABACAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0ABC132859720D00ABACAD /* Assets.xcassets */; };
@@ -14,6 +15,23 @@
 		8D0ABC222859720D00ABACAD /* KaizenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC212859720D00ABACAD /* KaizenTests.swift */; };
 		8D0ABC2C2859720D00ABACAD /* KaizenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC2B2859720D00ABACAD /* KaizenUITests.swift */; };
 		8D0ABC2E2859720D00ABACAD /* KaizenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC2D2859720D00ABACAD /* KaizenUITestsLaunchTests.swift */; };
+		8D0ABC3E285972C400ABACAD /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC3D285972C400ABACAD /* Today.swift */; };
+		8D0ABC402859737D00ABACAD /* MeditateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC3F2859737D00ABACAD /* MeditateView.swift */; };
+		8D0ABC422859741700ABACAD /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC412859741700ABACAD /* Journal.swift */; };
+		8D0ABC45285976FF00ABACAD /* MeditateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC44285976FF00ABACAD /* MeditateCard.swift */; };
+		8D0ABC4728597B5F00ABACAD /* MeditationDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC4628597B5F00ABACAD /* MeditationDetailPage.swift */; };
+		8D0ABC4A2859882400ABACAD /* MeditateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC492859882400ABACAD /* MeditateViewModel.swift */; };
+		8D0ABC4C2859884C00ABACAD /* MeditationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC4B2859884C00ABACAD /* MeditationPage.swift */; };
+		8D0ABC51285989A200ABACAD /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC50285989A200ABACAD /* MeditationViewModel.swift */; };
+		8D0ABC532859965400ABACAD /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0ABC522859965400ABACAD /* ProgressView.swift */; };
+		8D0B94DF2932C3CB009A0E95 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D0B94DE2932C3CB009A0E95 /* ComposableArchitecture */; };
+		8D0B94E12932C3CB009A0E95 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 8D0B94E02932C3CB009A0E95 /* Dependencies */; };
+		8D0B94E32932C409009A0E95 /* MeditateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B94E22932C409009A0E95 /* MeditateReducer.swift */; };
+		8D199EA5285DF7180041F159 /* FinishMeditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D199EA4285DF7180041F159 /* FinishMeditation.swift */; };
+		8D4290B728E7DCB4000817C8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4290B628E7DCB4000817C8 /* Extensions.swift */; };
+		8D50DD3228CE941C0052218E /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D50DD3128CE941C0052218E /* Bundle-Decodable.swift */; };
+		8D50DD3528CE94E40052218E /* MeditationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D50DD3428CE94E40052218E /* MeditationStore.swift */; };
+		8D9A822128E7D1BE00171280 /* LoadedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A822028E7D1BE00171280 /* LoadedImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D09557E28DA171100E89220 /* AddMeditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeditation.swift; sourceTree = "<group>"; };
 		8D0ABC0C2859720C00ABACAD /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0ABC0F2859720C00ABACAD /* KaizenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenApp.swift; sourceTree = "<group>"; };
 		8D0ABC112859720C00ABACAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +64,21 @@
 		8D0ABC272859720D00ABACAD /* KaizenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaizenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0ABC2B2859720D00ABACAD /* KaizenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenUITests.swift; sourceTree = "<group>"; };
 		8D0ABC2D2859720D00ABACAD /* KaizenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8D0ABC3D285972C400ABACAD /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
+		8D0ABC3F2859737D00ABACAD /* MeditateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateView.swift; sourceTree = "<group>"; };
+		8D0ABC412859741700ABACAD /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		8D0ABC44285976FF00ABACAD /* MeditateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateCard.swift; sourceTree = "<group>"; };
+		8D0ABC4628597B5F00ABACAD /* MeditationDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationDetailPage.swift; sourceTree = "<group>"; };
+		8D0ABC492859882400ABACAD /* MeditateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateViewModel.swift; sourceTree = "<group>"; };
+		8D0ABC4B2859884C00ABACAD /* MeditationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationPage.swift; sourceTree = "<group>"; };
+		8D0ABC50285989A200ABACAD /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
+		8D0ABC522859965400ABACAD /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		8D0B94E22932C409009A0E95 /* MeditateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditateReducer.swift; sourceTree = "<group>"; };
+		8D199EA4285DF7180041F159 /* FinishMeditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishMeditation.swift; sourceTree = "<group>"; };
+		8D4290B628E7DCB4000817C8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8D50DD3128CE941C0052218E /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		8D50DD3428CE94E40052218E /* MeditationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationStore.swift; sourceTree = "<group>"; };
+		8D9A822028E7D1BE00171280 /* LoadedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0B94DF2932C3CB009A0E95 /* ComposableArchitecture in Frameworks */,
+				8D0B94E12932C3CB009A0E95 /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +131,15 @@
 		8D0ABC0E2859720C00ABACAD /* Kaizen */ = {
 			isa = PBXGroup;
 			children = (
+				8D4290B528E7DCA9000817C8 /* Utils */,
+				8D50DD3328CE94D30052218E /* Stores */,
+				8D0ABC3A285972AC00ABACAD /* Views */,
 				8D0ABC0F2859720C00ABACAD /* KaizenApp.swift */,
 				8D0ABC112859720C00ABACAD /* ContentView.swift */,
 				8D0ABC132859720D00ABACAD /* Assets.xcassets */,
 				8D0ABC152859720D00ABACAD /* Kaizen.entitlements */,
 				8D0ABC162859720D00ABACAD /* Preview Content */,
+				8D50DD3128CE941C0052218E /* Bundle-Decodable.swift */,
 			);
 			path = Kaizen;
 			sourceTree = "<group>";
@@ -129,6 +169,58 @@
 			path = KaizenUITests;
 			sourceTree = "<group>";
 		};
+		8D0ABC3A285972AC00ABACAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABC43285976F200ABACAD /* Meditate */,
+				8D0ABC3D285972C400ABACAD /* Today.swift */,
+				8D0ABC412859741700ABACAD /* Journal.swift */,
+				8D9A822028E7D1BE00171280 /* LoadedImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8D0ABC43285976F200ABACAD /* Meditate */ = {
+			isa = PBXGroup;
+			children = (
+				8D09557E28DA171100E89220 /* AddMeditation.swift */,
+				8D0ABC482859881600ABACAD /* ViewModels */,
+				8D0ABC3F2859737D00ABACAD /* MeditateView.swift */,
+				8D0ABC44285976FF00ABACAD /* MeditateCard.swift */,
+				8D0ABC4628597B5F00ABACAD /* MeditationDetailPage.swift */,
+				8D0ABC4B2859884C00ABACAD /* MeditationPage.swift */,
+				8D0ABC522859965400ABACAD /* ProgressView.swift */,
+				8D199EA4285DF7180041F159 /* FinishMeditation.swift */,
+				8D0B94E22932C409009A0E95 /* MeditateReducer.swift */,
+			);
+			path = Meditate;
+			sourceTree = "<group>";
+		};
+		8D0ABC482859881600ABACAD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8D0ABC492859882400ABACAD /* MeditateViewModel.swift */,
+				8D0ABC50285989A200ABACAD /* MeditationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8D4290B528E7DCA9000817C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D4290B628E7DCB4000817C8 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8D50DD3328CE94D30052218E /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				8D50DD3428CE94E40052218E /* MeditationStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +237,10 @@
 			dependencies = (
 			);
 			name = Kaizen;
+			packageProductDependencies = (
+				8D0B94DE2932C3CB009A0E95 /* ComposableArchitecture */,
+				8D0B94E02932C3CB009A0E95 /* Dependencies */,
+			);
 			productName = Kaizen;
 			productReference = 8D0ABC0C2859720C00ABACAD /* Kaizen.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +313,9 @@
 				Base,
 			);
 			mainGroup = 8D0ABC032859720C00ABACAD;
+			packageReferences = (
+				8D0B94DD2932C3CB009A0E95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 8D0ABC0D2859720C00ABACAD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +359,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0ABC122859720C00ABACAD /* ContentView.swift in Sources */,
+				8D0ABC4728597B5F00ABACAD /* MeditationDetailPage.swift in Sources */,
+				8D0ABC51285989A200ABACAD /* MeditationViewModel.swift in Sources */,
+				8D0ABC422859741700ABACAD /* Journal.swift in Sources */,
+				8D199EA5285DF7180041F159 /* FinishMeditation.swift in Sources */,
+				8D09557F28DA171100E89220 /* AddMeditation.swift in Sources */,
+				8D50DD3228CE941C0052218E /* Bundle-Decodable.swift in Sources */,
+				8D0ABC4A2859882400ABACAD /* MeditateViewModel.swift in Sources */,
+				8D0ABC532859965400ABACAD /* ProgressView.swift in Sources */,
+				8D0ABC45285976FF00ABACAD /* MeditateCard.swift in Sources */,
+				8D9A822128E7D1BE00171280 /* LoadedImage.swift in Sources */,
+				8D50DD3528CE94E40052218E /* MeditationStore.swift in Sources */,
+				8D0ABC3E285972C400ABACAD /* Today.swift in Sources */,
+				8D4290B728E7DCB4000817C8 /* Extensions.swift in Sources */,
+				8D0B94E32932C409009A0E95 /* MeditateReducer.swift in Sources */,
+				8D0ABC4C2859884C00ABACAD /* MeditationPage.swift in Sources */,
+				8D0ABC402859737D00ABACAD /* MeditateView.swift in Sources */,
 				8D0ABC102859720C00ABACAD /* KaizenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +715,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D0B94DD2932C3CB009A0E95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D0B94DE2932C3CB009A0E95 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D0B94DD2932C3CB009A0E95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		8D0B94E02932C3CB009A0E95 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D0B94DD2932C3CB009A0E95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = Dependencies;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8D0ABC042859720C00ABACAD /* Project object */;
 }
