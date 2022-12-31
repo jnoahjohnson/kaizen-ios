@@ -26,6 +26,9 @@ enum UpdateImageError: Error {
     case loadTransferableError
 }
 
+struct MeditationActivity: Equatable, Codable, Hashable {
+    let date: Date
+}
 
 struct Meditation: Codable, Identifiable, Hashable {
     var id = UUID()
@@ -46,12 +49,24 @@ struct Meditation: Codable, Identifiable, Hashable {
     }
     var builtIn: Bool = false
     
-    static let defaultInstance = Meditation(name: "8 Sense", coverImagePath: "beach", stepDuration: 90, steps: ["Sight", "Breath", "Touch", "Taste"], builtIn: true)
+    var meditationActivities: [MeditationActivity] = []
+    
+    static let defaultInstance = Meditation(name: "8 Sense", coverImagePath: "beach", stepDuration: 90, steps: ["Sight", "Breath", "Touch", "Taste"], description: "The best meditation in the world", builtIn: true)
+}
+
+struct UpdateMeditationData: Hashable {
+    let id: UUID
+    let name: String
+    let stepDuration: Int
+    let steps: [String]
+    let description: String
 }
 
 enum AddMeditationPages {
     case stepPage, confirmPage
 }
+
+
 
 struct Meditate: ReducerProtocol {
     struct State: Equatable {
@@ -75,6 +90,9 @@ struct Meditate: ReducerProtocol {
         case saveImageResponse(TaskResult<String>)
         case updateImageData(PhotosPickerItem?)
         case updateImageResponse(TaskResult<Data>)
+        case deleteMeditation(IndexSet)
+        case updateMeditationTapped(UpdateMeditationData)
+        case finishMeditation(UUID)
     }
     
     
@@ -221,7 +239,55 @@ struct Meditate: ReducerProtocol {
             print("Issue with update image response")
             
             return .none
-           
+            
+        case let .deleteMeditation(offsets):
+            state.meditations.remove(atOffsets: offsets)
+            
+            return .run { send in
+                await send(.saveMeditations)
+            }
+            
+        case let .updateMeditationTapped(newData):
+            if let idx = state.meditations.firstIndex(where: { $0.id == newData.id }).flatMap({ $0 }) {
+                let oldMeditaitonIndex = state.meditations.distance(from: state.meditations.startIndex, to: idx)
+                let oldMeditation = state.meditations[oldMeditaitonIndex]
+                
+                let newMeditations = state.meditations.map { meditation in
+                    if (meditation.id == newData.id) {
+                        return Meditation(id: oldMeditation.id, name: newData.name, coverImagePath: oldMeditation.coverImagePath, stepDuration: newData.stepDuration, steps: newData.steps, description: newData.description, builtIn: oldMeditation.builtIn)
+                    } else {
+                        return meditation
+                    }
+                }
+                
+                state.meditations = newMeditations
+                
+                
+                return .run { send in
+                    await send(.saveMeditations)
+                }
+            }
+            else {
+                return .none
+            }
+            
+        case let .finishMeditation(meditationId):
+            let newMeditations = state.meditations.map { meditation in
+                if (meditation.id == meditationId) {
+                    var updateMeditation = meditation
+                    updateMeditation.meditationActivities.append(MeditationActivity(date: Date()))
+                    return updateMeditation
+                } else {
+                    return meditation
+                }
+            }
+            
+            state.meditations = newMeditations
+            
+            return .run { send in
+                await send(.saveMeditations)
+            }
         }
+        
     }
 }

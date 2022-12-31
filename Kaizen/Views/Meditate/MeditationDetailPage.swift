@@ -6,78 +6,136 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct MeditationDetailPage: View {
+    let store: StoreOf<Meditate>
     var meditation: Meditation
     var onMeditate: () -> Void
-    var onClose: () -> Void
     
     var body: some View {
-        
-        ZStack(alignment: .bottom){
-            GeometryReader { geometry in
+        NavigationStack {
+            ZStack(alignment: .bottom){
                 ZStack(alignment: .topTrailing) {
-                    
-                    
                     ScrollView (.vertical, showsIndicators: false) {
-                        ZStack(alignment: .topTrailing) {
-                           
-                            ZStack(alignment: .bottomLeading) {
-                                if (meditation.builtIn) {
-                                    Image(meditation.coverImagePath)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .brightness(-0.2)
-                                        .frame(height: geometry.size.height * 0.4)
-                                        .clipped()
-                                } else {
-                                    LoadedImage(imagePath: meditation.coverImagePath)
-                                        .brightness(-0.2)
-                                        .frame(height: geometry.size.height * 0.4)
-                                        .clipped()
+                        VStack(alignment: .leading) {
+                            ZStack(alignment: .topTrailing) {
+                                ZStack(alignment: .bottomLeading) {
+                                    if (meditation.builtIn) {
+                                        Image(meditation.coverImagePath)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(height: 240)
+                                            .clipped()
+                                    } else {
+                                        LoadedImage(imagePath: meditation.coverImagePath)
+                                            .frame(height: 240)
+                                            .clipped()
+                                    }
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text(meditation.name)
+                                            .font(.largeTitle)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
+                                            .shadow(radius: 8.0)
+                                        
+                                        HStack {
+                                            Image(systemName: "clock.fill")
+                                                .imageScale(.small)
+                                                .foregroundColor(.white)
+                                            
+                                            Text(meditation.durationDescription)
+                                                .font(.headline)
+                                                .foregroundColor(.white)
+                                        }
+                                    }
+                                    .padding([.horizontal, .bottom])
+                                    
+                                    
                                 }
-                                
-                                
-                                Text(meditation.name)
-                                    .font(.largeTitle.bold())
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .shadow(radius: 8.0)
                             }
-                        }
-                        .frame(height: geometry.size.height * 0.4)
-                        
-                        Text(meditation.description ?? "")
+                            
+                            Text(meditation.description ?? "")
+                                .fontWeight(.medium)
+                                .padding(.horizontal)
+                                .padding(.vertical, 4)
+                            
+                            
+                            
+                            Text("Steps")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.gray)
+                                .padding(.leading)
+                                .padding(.bottom, 1)
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                ForEach(self.meditation.steps, id: \.self) { step in
+                                    Text(step)
+                                        .font(.headline)
+                                        .bold()
+                                }
+                            }
                             .padding(.horizontal)
-                            .padding(.bottom, 62)
-                        
+                            .padding(.bottom)
+                            
+                            Text("Recent")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.gray)
+                                .padding(.leading)
+                                .padding(.bottom, 1)
+                            
+                            if (self.meditation.meditationActivities.isEmpty) {
+                                Text("No recent meditations")
+                                    .padding(.leading)
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                ForEach(self.meditation.meditationActivities, id: \.self) { activity in
+                                    Text(activity.date.formatted())
+                                        .font(.headline)
+                                        .bold()
+                                }
+                            }
+                            .padding(.horizontal)
+                            .padding(.bottom)
+                            
+                            NavigationLink {
+                                UpdateMeditation(store: self.store, meditationId: self.meditation.id, name: self.meditation.name, description: self.meditation.description ?? "", stepDuration: StepDuration(rawValue: self.meditation.stepDuration) ?? .oneMinute, steps: self.meditation.steps.map { Step(title: $0) })
+                            } label: {
+                                Text("Edit Meditation")
+                                    .padding(.leading)
+                            }
+                            
+                        }
                     }
                     
-                    Button {
-                        onClose()
-                    } label: {
-                        Image(systemName: "x.circle.fill")
-                            .font(.system(size: 28))
-                            .clipShape(Circle())
-                            .foregroundColor(.white)
-                            .padding()
-                    }
                 }
                 
-            } //close geometry reader
+            }
             .edgesIgnoringSafeArea(.top)
             
             Button {
-                // Start Meditation
                 onMeditate()
             } label: {
-                Text("Start Meditation")
-                    .font(.headline)
-                    .foregroundColor(.accentColor)
-                    .padding()
-                    .background(.thinMaterial)
-                    .clipShape(Capsule())
-                    .shadow(color: .secondary, radius: 3)
+                
+                HStack {
+                    Image(systemName: "play.fill")
+                        .foregroundColor(.primary)
+                        .padding(.trailing, 4)
+                    
+                    Text("Start Meditation")
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                    
+                }
+                .padding(EdgeInsets(top: 18, leading: 32, bottom: 18, trailing: 32))
+                .background(.thinMaterial)
+                .clipShape(Capsule())
+                
+                
             }
             
         }
@@ -89,7 +147,9 @@ struct MeditationDetailPage: View {
 struct MeditationDetailPage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            MeditationDetailPage(meditation: .defaultInstance, onMeditate: { }, onClose: { })
+            MeditationDetailPage(store: Store(
+                initialState: Meditate.State(meditations: []),
+                reducer: Meditate()), meditation: .defaultInstance, onMeditate: { })
         }
     }
 }

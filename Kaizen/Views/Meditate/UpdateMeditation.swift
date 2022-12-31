@@ -1,36 +1,33 @@
 //
-//  AddMeditation.swift
+//  UpdateMeditation.swift
 //  Kaizen
 //
-//  Created by Noah Johnson on 9/20/22.
+//  Created by Noah Johnson on 11/28/22.
 //
 
 import SwiftUI
-import PhotosUI
 import ComposableArchitecture
+import PhotosUI
 
-enum StepDuration: Int {
-    case thirtySeconds = 30
-    case oneMinute = 60
-    case oneAndHalf = 90
-    case twoMinutes = 120
-}
-
-struct Step: Identifiable, Hashable {
-    var id = UUID()
-    var title: String
-}
-
-struct AddMeditation: View {
+struct UpdateMeditation: View {
     let store: StoreOf<Meditate>
+    let meditationId: UUID
     
-    @State var name: String = ""
-    @State var description: String = ""
+    @State var name: String
+    @State var description: String
     @State var selectedItem: PhotosPickerItem? = nil
-    @State var stepDuration: StepDuration = .oneMinute
+    @State var stepDuration: StepDuration
+    @State private var steps: [Step]
     
-    @State private var steps: [Step] = [Step(title: "First"), Step(title: "Second")]
-    
+    init(store: StoreOf<Meditate>, meditationId: UUID, name: String, description: String, stepDuration: StepDuration, steps: [Step]) {
+        print("Name", name)
+        self.store = store
+        self.meditationId = meditationId
+        _name = State(initialValue: name)
+        _description = State(initialValue: description)
+        _stepDuration = State(initialValue: stepDuration)
+        _steps = State(initialValue: steps)
+    }
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -69,13 +66,14 @@ struct AddMeditation: View {
                         }
                     }
                     
-                    Button("Save") {
-                        viewStore.send(.saveNewMeditationButtonTapped(
-                            Meditation(
-                                name: name,
-                                stepDuration: stepDuration.rawValue,
-                                steps:  steps.map { $0.title },
-                                description: description
+                    Button("Update") {
+                        viewStore.send(.updateMeditationTapped(
+                            UpdateMeditationData(
+                                id: self.meditationId,
+                                name: self.name,
+                                stepDuration: self.stepDuration.rawValue,
+                                steps: self.steps.map { $0.title },
+                                description: self.description
                             )
                         ))
                     }
@@ -86,18 +84,13 @@ struct AddMeditation: View {
                 }
             }
         }
-        
     }
-    
 }
 
-
-
-struct AddMeditation_Previews: PreviewProvider {
+struct UpdateMeditation_Previews: PreviewProvider {
     static var previews: some View {
-        AddMeditation(store: Store(
+        UpdateMeditation(store: Store(
             initialState: Meditate.State(meditations: []),
-            reducer: Meditate()
-        ))
+            reducer: Meditate()), meditationId: UUID(), name: "Meditation", description: "Description", stepDuration: StepDuration(rawValue: 60) ?? .oneMinute, steps: [Step(title: "Test")])
     }
 }

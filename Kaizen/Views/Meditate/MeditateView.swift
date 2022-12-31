@@ -16,22 +16,24 @@ struct MeditateView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack(path: $navVM.meditationPath) {
-                ScrollView {
-                    VStack {
-                        ForEach(viewStore.meditations) { meditation in
-                            Button {
-                                self.navVM.selectedMeditation = MeditationViewModel(meditation: meditation, onClose: {
-                                    self.navVM.selectedMeditation = nil
-                                } )
-                            } label: {
-                                MeditateCard(meditation: meditation)
-                            }
-                        }
-                        
-                    }
-                    .padding()
-                }
                 
+                List {
+                    ForEach(viewStore.meditations) { meditation in
+                        Button {
+                            self.navVM.selectedMeditation = MeditationViewModel(meditation: meditation, store: viewStore, onClose: {
+                                self.navVM.selectedMeditation = nil
+                            } )
+                        } label: {
+                            MeditateCard(meditation: meditation)
+                        }
+                    }
+                    .onDelete { indexSet in viewStore.send(.deleteMeditation(indexSet)) }
+                    .listRowSeparator(.hidden)
+                    
+                    
+                }
+                .listStyle(.plain)
+                     
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
@@ -39,6 +41,10 @@ struct MeditateView: View {
                         } label: {
                             Image(systemName: "plus.circle")
                         }
+                    }
+                    
+                    ToolbarItem(placement: .secondaryAction) {
+                        EditButton()
                     }
                 }
                 
@@ -48,14 +54,25 @@ struct MeditateView: View {
                 ) {
                     AddMeditation(store: store)
                 }
+                .sheet(item: $navVM.selectedMeditation, onDismiss: {
+                    self.navVM.selectedMeditation = nil
+                }) { item in
+                    MeditationDetailPage(store: self.store, meditation: item.meditation, onMeditate: {
+                        self.navVM.selectedTab = .meditate
+                        self.navVM.navigate(to: navVM.selectedMeditation!.meditation)
+                        self.navVM.selectedMeditation = nil
+                    })
+                }
                 .navigationDestination(for: Meditation.self) { meditation in
-                    MeditationPage(meditation: meditation, onClose: {
+                    MeditationPage(meditation: meditation, store: viewStore, onClose: {
                         self.navVM.clearNavigation()
                     })
                 }
                 
                 .navigationTitle("Meditate")
-                .onAppear { viewStore.send(.loadMeditations) }
+                .task {
+                    viewStore.send(.loadMeditations)
+                }
             }
         }
     }

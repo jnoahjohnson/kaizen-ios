@@ -7,9 +7,12 @@
 
 import Foundation
 import AVFoundation
+import SwiftUI
+import ComposableArchitecture
 
 class MeditationViewModel: ObservableObject, Identifiable {
     @Published var meditation: Meditation
+    let store: ViewStoreOf<Meditate>
     @Published var timeLeft: String = "1:00"
     @Published var currentTitle: String = ""
     @Published var progress: Float = 0.0
@@ -57,7 +60,7 @@ class MeditationViewModel: ObservableObject, Identifiable {
     var timer = Timer()
     var id: UUID
     
-    init(meditation: Meditation, onClose: @escaping () -> Void) {
+    init(meditation: Meditation, store: ViewStoreOf<Meditate>, onClose: @escaping () -> Void) {
         self.meditation = meditation
         self.id = meditation.id
         self.duration = meditation.stepDuration
@@ -65,6 +68,7 @@ class MeditationViewModel: ObservableObject, Identifiable {
         self.steps = meditation.steps
         self.currentTitle = self.steps[0]
         self.onClose = onClose
+        self.store = store
     }
     
     
@@ -114,6 +118,8 @@ class MeditationViewModel: ObservableObject, Identifiable {
             currentDuration = duration
             playStepSound()
         }
+        
+        
     }
     
     func prevStep() {
@@ -130,11 +136,16 @@ class MeditationViewModel: ObservableObject, Identifiable {
         stopTimer()
         isFinished = true
         
+        self.store.send(.finishMeditation(self.meditation.id))
+        
+        UIApplication.shared.isIdleTimerDisabled = false
+        
         onClose()
     }
     
     func cancel() {
         stopTimer()
+        UIApplication.shared.isIdleTimerDisabled = false
         onClose()
     }
     

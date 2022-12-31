@@ -13,15 +13,30 @@ struct MeditateCard: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             if (meditation.builtIn) {
-                Image(meditation.coverImagePath)
-                    .resizable()
-                    .scaledToFill()
-                    .brightness(-0.2)
-                    .frame(maxWidth: .infinity, maxHeight: 220.0)
+                ZStack {
+                    Image(meditation.coverImagePath)
+                        .resizable()
+                        .scaledToFill()
+
+                    Rectangle()
+                        .fill(.black)
+                        .opacity(0.2)
+                        
+                }
+                .frame(maxWidth: .infinity, maxHeight: 220.0)
+                .clipped()
+                
             } else {
-                LoadedImage(imagePath: meditation.coverImagePath)
-                    .brightness(-0.2)
-                    .frame(maxWidth: .infinity, maxHeight: 220.0)
+                ZStack {
+                    LoadedImage(imagePath: meditation.coverImagePath)
+
+                    Rectangle()
+                        .fill(.black)
+                        .opacity(0.2)
+                        
+                }
+                .frame(maxWidth: .infinity, maxHeight: 220.0)
+                .clipped()
             }
            
 

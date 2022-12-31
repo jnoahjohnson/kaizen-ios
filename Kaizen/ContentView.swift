@@ -13,7 +13,7 @@ enum NavigationTabItems {
 }
 
 class NavigationViewModel: ObservableObject {
-    @Published var selectedTab: NavigationTabItems = .today
+    @Published var selectedTab: NavigationTabItems = .meditate
     @Published var selectedMeditation: MeditationViewModel? = nil
     @Published var meditationPath: [Meditation] = []
     
@@ -34,6 +34,11 @@ class NavigationViewModel: ObservableObject {
 struct ContentView: View {
     @ObservedObject var navVM = NavigationViewModel()
     
+    let store = Store(
+        initialState: Meditate.State(meditations: []),
+        reducer: Meditate()
+    )
+    
     var body: some View {
         TabView(selection: self.$navVM.selectedTab) {
             Today()
@@ -42,25 +47,11 @@ struct ContentView: View {
                 }
                 .tag(NavigationTabItems.today)
             
-            MeditateView(store: Store(
-                initialState: Meditate.State(meditations: [.defaultInstance]),
-                reducer: Meditate()
-            ))
+            MeditateView(store: store)
                 .tabItem {
                     Label("Meditate", systemImage: "figure.mind.and.body")
                 }
                 .tag(NavigationTabItems.meditate)
-        }
-        .sheet(item: $navVM.selectedMeditation, onDismiss: {}) { item in
-            NavigationStack {
-                MeditationDetailPage(meditation: item.meditation, onMeditate: {
-                    self.navVM.selectedTab = .meditate
-                    self.navVM.navigate(to: navVM.selectedMeditation!.meditation)
-                    self.navVM.selectedMeditation = nil
-                }, onClose: {
-                    self.navVM.selectedMeditation = nil
-                })
-            }
         }
         .environmentObject(navVM)
     }

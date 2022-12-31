@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct MeditationPage: View {
     @ObservedObject var viewModel: MeditationViewModel
+    let store: ViewStoreOf<Meditate>
+    @Environment(\.scenePhase) var scenePhase
     
-    init(meditation: Meditation, onClose: @escaping () -> Void) {
-        self.viewModel = MeditationViewModel(meditation: meditation, onClose: onClose)
+    
+    init(meditation: Meditation, store: ViewStoreOf<Meditate>, onClose: @escaping () -> Void) {
+        self.viewModel = MeditationViewModel(meditation: meditation, store: store, onClose: onClose)
+        self.store = store
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     var body: some View {
@@ -95,16 +101,31 @@ struct MeditationPage: View {
         
         .navigationBarBackButtonHidden()
         .navigationTitle(viewModel.meditation.name)
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                print("Active")
+            } else if newPhase == .inactive {
+                print("Inactive")
+            } else if newPhase == .background {
+                print("Background")
+            }
+        }
         
     }
 }
 
 struct MeditationPage_Previews: PreviewProvider {
-    static let viewModel = MeditationViewModel(meditation: .defaultInstance, onClose: { })
+    static let store = Store(
+        initialState: Meditate.State(meditations: [.defaultInstance]),
+        reducer: Meditate()
+    )
+    static let viewStore = ViewStore(store)
+    
+    static let viewModel = MeditationViewModel(meditation: .defaultInstance, store: viewStore, onClose: { })
     
     static var previews: some View {
         NavigationStack {
-            MeditationPage(meditation: self.viewModel.meditation, onClose: { })
+            MeditationPage(meditation: self.viewModel.meditation, store: viewStore, onClose: { })
         }
     }
 }
